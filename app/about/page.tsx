@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Building2, Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us - SMR Enterprises',
@@ -54,7 +54,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="about-image">
-              <Building2 size={100} />
+              <img src="/images/banners/logo.png" alt="SMR Enterprises Logo" />
             </div>
           </div>
         </div>

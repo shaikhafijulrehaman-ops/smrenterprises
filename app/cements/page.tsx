@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import ProductPageLayout from '@/components/ProductPageLayout';
+import WorkGallery from '@/components/WorkGallery';
 import { CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -16,11 +17,29 @@ const cementTypes = [
 ];
 
 const brands = [
-  'ACC Cement',
-  'UltraTech Cement',
-  'Ambuja Cement',
-  'Ramco Cement',
-  'Dalmia Cement',
+  'ACC',
+  'UltraTech',
+  'Ambuja',
+  'JSW',
+  'KCP',
+  'Bharathi',
+  'Nagarjuna',
+  'Vicat',
+  'Ramco',
+  'Dalmia',
+  'Shree',
+  'Penna',
+  'Maha',
+  'Raasi',
+  'Anjani',
+  'Sagar',
+];
+
+const cementWorkImages = [
+  '/images/banners/cementworks.webp',
+  '/images/banners/cementworks1.webp',
+  '/images/banners/cementworks2.avif',
+  '/images/banners/cementworks3.webp',
 ];
 
 export default function CementsPage() {
@@ -53,6 +72,8 @@ export default function CementsPage() {
           ))}
         </ul>
       </div>
+
+      <WorkGallery images={cementWorkImages} title="Types of Cement Works" />
     </ProductPageLayout>
   );
 }

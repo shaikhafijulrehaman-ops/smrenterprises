@@ -4,33 +4,28 @@ import Image from 'next/image';
 const categories = [
   {
     href: '/paints',
-    image: '/images/banners/paints.jpeg',
-    title: 'Paints',
-    description: 'Interior and exterior paints from Asian Paints, Berger, Dulux and Nerolac.',
+    image: '/images/banners/paintworks1.jpg',
+    title: 'Paint Works',
   },
   {
     href: '/cements',
-    image: '/images/banners/cement.jpeg',
-    title: 'Cements',
-    description: 'OPC and PPC cement from ACC, UltraTech and other trusted brands.',
+    image: '/images/banners/cementworks.webp',
+    title: 'Cement Works',
   },
   {
     href: '/pipes',
-    image: '/images/banners/pipesandfitting.jpeg',
-    title: 'Pipes & Fittings',
-    description: 'Complete range of PVC, CPVC and UPVC pipes from Astral and Finolex.',
+    image: '/images/banners/pipeworks1.jpg',
+    title: 'Pipe Works',
   },
   {
     href: '/sanitary',
-    image: '/images/banners/sanitaryandbathroom.jpeg',
-    title: 'Sanitary Products',
-    description: 'Basins, commodes, bathtubs, water heaters and bathroom accessories.',
+    image: '/images/banners/sanitoryworks1.jpg',
+    title: 'Sanitary Works',
   },
   {
     href: '/service',
-    image: '/images/banners/pestcontrol.jpeg',
+    image: '/images/banners/pestcontrol.jpg',
     title: 'Pest Control',
-    description: 'Professional pest control services for residential and commercial spaces.',
   },
 ];
 
@@ -38,27 +33,26 @@ export default function CategoryGrid() {
   return (
     <section className="section section-alt">
       <div className="container">
-        <h2 className="section-title">Our Products</h2>
+        <h2 className="section-title">Our Services</h2>
         <p className="section-subtitle">
-          Explore our comprehensive range of quality construction materials
+          Explore our comprehensive range of quality construction services
         </p>
-        <div className="categories-grid">
+        <div className="cat-grid">
           {categories.map((category, index) => (
-            <Link key={index} href={category.href} className="category-card">
-              <div className="category-image">
+            <Link key={index} href={category.href} className="cat-block">
+              <div className="cat-block-img">
                 <Image
                   src={category.image}
                   alt={category.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
-              <div className="category-content">
-                <h3>{category.title}</h3>
-                <p>{category.description}</p>
-                <span className="btn btn-outline" style={{ marginTop: '10px' }}>
-                  View Details
-                </span>
+              <div className="cat-block-overlay" />
+              <div className="cat-block-content">
+                <h3 className="cat-block-title">{category.title}</h3>
+                <span className="cat-block-btn">View Works</span>
               </div>
             </Link>
           ))}

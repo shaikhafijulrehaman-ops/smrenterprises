@@ -26,7 +26,7 @@ export default function Navbar() {
       <div className="navbar-inner">
         <Link href="/" className="navbar-logo">
           <div className="navbar-logo-text">
-            <h1>SRM</h1>
+            <h1>SMR</h1>
             <span>Enterprises</span>
           </div>
         </Link>

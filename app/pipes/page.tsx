@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import ProductPageLayout from '@/components/ProductPageLayout';
+import WorkGallery from '@/components/WorkGallery';
 import { CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -30,10 +31,20 @@ const fittings = [
 ];
 
 const brands = [
-  'Astral Pipes',
-  'Finolex Pipes',
-  'Supreme Pipes',
-  'Prince Pipes',
+  'Astral',
+  'Ashirvad',
+  'Finolex',
+  'APL Apollo',
+  'Prince',
+  'Captain',
+  'Kisan',
+  'Dutron',
+];
+
+const pipeWorkImages = [
+  '/images/banners/pipeworks1.jpg',
+  '/images/banners/pipeworks2.jpg',
+  '/images/banners/pipeworks3.jpg',
 ];
 
 export default function PipesPage() {
@@ -78,6 +89,8 @@ export default function PipesPage() {
           ))}
         </ul>
       </div>
+
+      <WorkGallery images={pipeWorkImages} title="Types of Pipe Works" />
     </ProductPageLayout>
   );
 }

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import ProductPageLayout from '@/components/ProductPageLayout';
+import WorkGallery from '@/components/WorkGallery';
 import { CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -32,6 +33,13 @@ const waterStorage = [
   'Overhead Tanks',
   'Underground Tanks',
   'Loft Tanks',
+];
+
+const sanitaryWorkImages = [
+  '/images/banners/sanitoryworks.jpg',
+  '/images/banners/sanitoryworks1.jpg',
+  '/images/banners/sanitoryworks2.jpg',
+  '/images/banners/sanitoryworks3.jpeg',
 ];
 
 export default function SanitaryPage() {
@@ -76,6 +84,8 @@ export default function SanitaryPage() {
           ))}
         </ul>
       </div>
+
+      <WorkGallery images={sanitaryWorkImages} title="Types of Sanitary Works" />
     </ProductPageLayout>
   );
 }

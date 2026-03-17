@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import ProductPageLayout from '@/components/ProductPageLayout';
+import WorkGallery from '@/components/WorkGallery';
 import { CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -22,9 +23,22 @@ const paintTypes = [
 
 const brands = [
   'Asian Paints',
-  'Berger Paints',
-  'Dulux',
+  'Berger',
+  'Birla Opus',
   'Nerolac',
+  'Dulux',
+  'Shalimar',
+  'Indigo',
+  'Nippon',
+  'MRF',
+  'Sirca',
+];
+
+const paintWorkImages = [
+  '/images/banners/paintworks.jpg',
+  '/images/banners/paintworks1.jpg',
+  '/images/banners/paintworks2.jpeg',
+  '/images/banners/paintworks3.jpg',
 ];
 
 export default function PaintsPage() {
@@ -57,6 +71,8 @@ export default function PaintsPage() {
           ))}
         </ul>
       </div>
+
+      <WorkGallery images={paintWorkImages} title="Types of Paint Works" />
     </ProductPageLayout>
   );
 }

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import ProductPageLayout from '@/components/ProductPageLayout';
+import WorkGallery from '@/components/WorkGallery';
 import { CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -25,6 +26,12 @@ const coverage = [
   'Warehouses',
   'Restaurants',
   'Hotels',
+];
+
+const pestControlWorkImages = [
+  '/images/banners/pestcontrol.jpg',
+  '/images/banners/pestcontrol1.webp',
+  '/images/banners/pestcontrol2.png',
 ];
 
 export default function ServicePage() {
@@ -57,6 +64,8 @@ export default function ServicePage() {
           ))}
         </ul>
       </div>
+
+      <WorkGallery images={pestControlWorkImages} title="Types of Pest Control Works" />
     </ProductPageLayout>
   );
 }
