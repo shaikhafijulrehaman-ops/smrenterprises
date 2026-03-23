@@ -26,7 +26,7 @@ export default function Highlights() {
           {highlights.map((item, index) => (
             <div key={index} className="highlight-item">
               <div className="highlight-icon">
-                <item.icon size={36} />
+                <item.icon />
               </div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>

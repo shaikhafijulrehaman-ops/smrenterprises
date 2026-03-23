@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import Image from 'next/image';
 
 interface WorkGalleryProps {
   images: string[];
@@ -11,21 +10,56 @@ interface WorkGalleryProps {
 
 export default function WorkGallery({ images, title = 'Recent Work Projects' }: WorkGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [validImages, setValidImages] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Filter out images that fail to load
+  useEffect(() => {
+    const checkImages = async () => {
+      setLoading(true);
+      const valid: string[] = [];
+      for (const src of images) {
+        try {
+          const img = new Image();
+          await new Promise((resolve, reject) => {
+            img.onload = resolve;
+            img.onerror = reject;
+            img.src = src;
+          });
+          valid.push(src);
+        } catch {
+          console.warn(`Image not found: ${src}`);
+        }
+      }
+      setValidImages(valid);
+      setLoading(false);
+    };
+    checkImages();
+  }, [images]);
 
   const openModal = (index: number) => setSelectedIndex(index);
   const closeModal = () => setSelectedIndex(null);
 
   const goToPrevious = () => {
     if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
+      setSelectedIndex((selectedIndex - 1 + validImages.length) % validImages.length);
     }
   };
 
   const goToNext = () => {
     if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex + 1) % images.length);
+      setSelectedIndex((selectedIndex + 1) % validImages.length);
     }
   };
+
+  // Don't render if loading or no valid images
+  if (loading) {
+    return null;
+  }
+
+  if (validImages.length === 0) {
+    return null;
+  }
 
   return (
     <>
@@ -33,7 +67,7 @@ export default function WorkGallery({ images, title = 'Recent Work Projects' }: 
         <div className="gallery-container">
           <h2 className="gallery-title">{title}</h2>
           <div className="gallery-grid">
-            {images.map((image, index) => (
+            {validImages.map((image, index) => (
               <div
                 key={index}
                 className="gallery-card"
@@ -69,7 +103,7 @@ export default function WorkGallery({ images, title = 'Recent Work Projects' }: 
 
             <div className="modal-image-container">
               <img
-                src={images[selectedIndex]}
+                src={validImages[selectedIndex]}
                 alt={`Work project ${selectedIndex + 1}`}
                 className="modal-image"
               />
@@ -84,7 +118,7 @@ export default function WorkGallery({ images, title = 'Recent Work Projects' }: 
             </button>
 
             <div className="modal-counter">
-              {selectedIndex + 1} / {images.length}
+              {selectedIndex + 1} / {validImages.length}
             </div>
           </div>
         </div>
