@@ -4,23 +4,23 @@ import Image from 'next/image';
 const categories = [
   {
     href: '/paints',
-    image: '/images/banners/paintworks1.jpg',
-    title: 'Paint Works',
+    image: '/images/banners/paints.jpeg',
+    title: 'Paint Supply',
   },
   {
     href: '/cements',
-    image: '/images/banners/cementworks.webp',
-    title: 'Cement Works',
+    image: '/images/banners/cement.jpeg',
+    title: 'Cement Supply',
   },
   {
     href: '/pipes',
-    image: '/images/banners/pipeworks1.jpg',
-    title: 'Pipe Works',
+    image: '/images/banners/pipesandfitting.jpeg',
+    title: 'Pipe Supply',
   },
   {
     href: '/sanitary',
-    image: '/images/banners/sanitoryworks1.jpg',
-    title: 'Sanitary Works',
+    image: '/images/banners/sanitaryandbathroom.jpeg',
+    title: 'Sanitary Supply',
   },
   {
     href: '/service',
@@ -52,7 +52,7 @@ export default function CategoryGrid() {
               <div className="cat-block-overlay" />
               <div className="cat-block-content">
                 <h3 className="cat-block-title">{category.title}</h3>
-                <span className="cat-block-btn">View Works</span>
+                <span className="cat-block-btn">View Supply</span>
               </div>
             </Link>
           ))}

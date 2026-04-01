@@ -36,10 +36,12 @@ const waterStorage = [
 ];
 
 const sanitaryWorkImages = [
-  '/images/banners/sanitoryworks.jpg',
   '/images/banners/sanitoryworks1.jpg',
   '/images/banners/sanitoryworks2.jpg',
   '/images/banners/sanitoryworks3.jpeg',
+  '/images/banners/sanitaryworksnew.jpg',
+  '/images/banners/sanitaryworksnew2.jpeg',
+  '/images/banners/sanitoryworksnew3.jpg',
 ];
 
 export default function SanitaryPage() {
@@ -85,7 +87,7 @@ export default function SanitaryPage() {
         </ul>
       </div>
 
-      <WorkGallery images={sanitaryWorkImages} title="Types of Sanitary Works" />
+      <WorkGallery images={sanitaryWorkImages} title="Types of Sanitary Supply" />
     </ProductPageLayout>
   );
 }

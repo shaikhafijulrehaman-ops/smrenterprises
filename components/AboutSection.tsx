@@ -28,10 +28,10 @@ export default function AboutSection() {
           </div>
           <div className="about-image">
             <Image
-              src="/images/banners/about.jpeg"
-              alt="About SMR Enterprises"
+              src="/images/banners/logo.jpeg"
+              alt="SMR Enterprises Logo"
               fill
-              style={{ objectFit: 'cover', borderRadius: '12px' }}
+              style={{ objectFit: 'contain', borderRadius: '12px' }}
             />
           </div>
         </div>

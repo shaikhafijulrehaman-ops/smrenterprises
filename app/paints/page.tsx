@@ -35,10 +35,12 @@ const brands = [
 ];
 
 const paintWorkImages = [
-  '/images/banners/paintworks.jpg',
   '/images/banners/paintworks1.jpg',
   '/images/banners/paintworks2.jpeg',
   '/images/banners/paintworks3.jpg',
+  '/images/banners/paintworksnew.jpg',
+  '/images/banners/paintworksnew2.jpg',
+  '/images/banners/paintworksnew3.jpg',
 ];
 
 export default function PaintsPage() {
@@ -72,7 +74,7 @@ export default function PaintsPage() {
         </ul>
       </div>
 
-      <WorkGallery images={paintWorkImages} title="Types of Paint Works" />
+      <WorkGallery images={paintWorkImages} title="Types of Paint Supply" />
     </ProductPageLayout>
   );
 }

@@ -45,6 +45,9 @@ const pipeWorkImages = [
   '/images/banners/pipeworks1.jpg',
   '/images/banners/pipeworks2.jpg',
   '/images/banners/pipeworks3.jpg',
+  '/images/banners/pipeworksnew.jpg',
+  '/images/banners/pipeworksnew2.jpg',
+  '/images/banners/pipeworksnew3.jpg',
 ];
 
 export default function PipesPage() {
@@ -90,7 +93,7 @@ export default function PipesPage() {
         </ul>
       </div>
 
-      <WorkGallery images={pipeWorkImages} title="Types of Pipe Works" />
+      <WorkGallery images={pipeWorkImages} title="Types of Pipe Supply" />
     </ProductPageLayout>
   );
 }

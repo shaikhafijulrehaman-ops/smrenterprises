@@ -36,10 +36,12 @@ const brands = [
 ];
 
 const cementWorkImages = [
-  '/images/banners/cementworks.webp',
   '/images/banners/cementworks1.webp',
   '/images/banners/cementworks2.avif',
   '/images/banners/cementworks3.webp',
+  '/images/banners/cementworksnew.webp',
+  '/images/banners/cementworksnew2.webp',
+  '/images/banners/cementworksnew3.webp',
 ];
 
 export default function CementsPage() {
@@ -73,7 +75,7 @@ export default function CementsPage() {
         </ul>
       </div>
 
-      <WorkGallery images={cementWorkImages} title="Types of Cement Works" />
+      <WorkGallery images={cementWorkImages} title="Types of Cement Supply" />
     </ProductPageLayout>
   );
 }

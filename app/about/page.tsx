@@ -54,7 +54,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="about-image">
-              <img src="/images/banners/logo.png" alt="SMR Enterprises Logo" />
+              <img src="/images/banners/logo.jpeg" alt="SMR Enterprises Logo" />
             </div>
           </div>
         </div>
