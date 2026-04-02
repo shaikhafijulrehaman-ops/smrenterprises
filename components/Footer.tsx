@@ -64,6 +64,9 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} SMR Enterprises. All rights reserved.</p>
+          <p style={{ marginTop: '8px' }}>
+            Built by <a href="https://uxitech.in" target="_blank" rel="noopener noreferrer" style={{ color: '#a855f7', textDecoration: 'none' }}>UXITECH</a>
+          </p>
         </div>
       </div>
     </footer>
