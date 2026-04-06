@@ -15,7 +15,7 @@ export default function ContactSection() {
             </div>
             <h3>Phone</h3>
             <p>
-              <a href="tel:9493700577">9493700577</a>
+              <a href="tel:9390370577">9390370577</a>
             </p>
           </div>
           <div className="contact-card">
@@ -37,7 +37,7 @@ export default function ContactSection() {
         </div>
         <div style={{ textAlign: 'center', marginTop: '50px' }}>
           <a
-            href="https://wa.me/919493700577?text=Hello%20SMR%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+            href="https://wa.me/919390370577?text=Hello%20SMR%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-accent"

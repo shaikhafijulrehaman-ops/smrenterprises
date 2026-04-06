@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback, memo } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
@@ -15,16 +15,17 @@ const navLinks = [
   { href: '/service', label: 'Service' },
 ];
 
-export default function Navbar() {
+const Navbar = memo(function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = useCallback(() => setIsMenuOpen(prev => !prev), []);
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
 
   return (
     <nav className="navbar">
       <div className="navbar-inner">
-        <Link href="/" className="navbar-logo">
+        <Link href="/" className="navbar-logo" prefetch={false}>
           <div className="navbar-logo-text">
             <h1>SMR</h1>
             <span>Enterprises</span>
@@ -37,7 +38,8 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 className={pathname === link.href ? 'active' : ''}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={closeMenu}
+                prefetch={false}
               >
                 {link.label}
               </Link>
@@ -51,4 +53,6 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+});
+
+export default Navbar;

@@ -16,6 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <meta name="theme-color" content="#A0D2EB" />
+      </head>
       <body>
         <Navbar />
         <main>{children}</main>

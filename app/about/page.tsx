@@ -89,7 +89,7 @@ export default function AboutPage() {
               </div>
               <h3>Phone</h3>
               <p>
-                <a href="tel:9493700577">9493700577</a>
+                <a href="tel:9390370577">9390370577</a>
               </p>
             </div>
             <div className="contact-card">
@@ -117,12 +117,12 @@ export default function AboutPage() {
           <h2>Ready to Start Your Project?</h2>
           <p>Contact us today for the best prices on construction materials</p>
           <div className="cta-buttons">
-            <a href="tel:9493700577" className="btn btn-white">
+            <a href="tel:9390370577" className="btn btn-white">
               <Phone size={20} />
               Call Now
             </a>
             <a
-              href="https://wa.me/919493700577?text=Hello%20SMR%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+              href="https://wa.me/919390370577?text=Hello%20SMR%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-accent"

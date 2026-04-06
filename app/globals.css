@@ -1,4 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Preload Inter font with display swap for faster rendering */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI-fAZ9hiJ-Ek-_EeA.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hiJ-Ek-_EeA.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiJ-Ek-_EeA.woff2') format('woff2');
+}
 
 :root {
   --bg: #A0D2EB;
@@ -32,6 +60,20 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* GPU acceleration for smooth animations */
+.hero-slide,
+.hero-slide-bg,
+.navbar,
+.cat-block,
+.feature-card,
+.contact-card,
+.brand-item {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 body {
@@ -111,7 +153,9 @@ img {
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .btn-primary {
@@ -259,7 +303,7 @@ img {
 .navbar-menu a {
   font-weight: 500;
   color: var(--dark);
-  transition: all 0.3s ease;
+  transition: color 0.2s ease;
   position: relative;
 }
 
@@ -276,7 +320,7 @@ img {
   width: 0;
   height: 2px;
   background-color: var(--accent);
-  transition: width 0.3s ease;
+  transition: width 0.2s ease;
 }
 
 .navbar-menu a:hover::after,
@@ -312,10 +356,12 @@ img {
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateZ(0);
+  will-change: opacity;
 }
 
 .hero-slide.active {
@@ -332,7 +378,8 @@ img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .hero-slide-overlay {
@@ -413,17 +460,19 @@ img {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 12px;
   border: 1px solid var(--border);
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 16px;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .highlight-item:hover {
   background: var(--tile-hover);
   border-color: var(--border-hover);
-  transform: translateY(-4px);
+  transform: translateY(-4px) translateZ(0);
   box-shadow: var(--shadow-hover);
 }
 
@@ -477,11 +526,13 @@ img {
 .cat-block-img {
   position: absolute;
   inset: 0;
-  transition: transform 0.45s ease;
+  transition: transform 0.3s ease-out;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .cat-block:hover .cat-block-img {
-  transform: scale(1.06);
+  transform: scale(1.05) translateZ(0);
 }
 
 .cat-block-overlay {
@@ -492,7 +543,7 @@ img {
     rgba(0, 0, 0, 0.6)
   );
   z-index: 1;
-  transition: background 0.35s ease;
+  transition: background 0.25s ease;
 }
 
 .cat-block:hover .cat-block-overlay {
@@ -531,12 +582,13 @@ img {
   color: #ffffff;
   background-color: var(--accent);
   border-radius: var(--radius-sm);
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  transform: translateZ(0);
 }
 
 .cat-block:hover .cat-block-btn {
   background-color: var(--accent-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2px) translateZ(0);
 }
 
 /* Brands */

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, memo } from 'react';
 
 const slides = [
   {
@@ -21,19 +21,19 @@ const slides = [
   },
 ];
 
-export default function HeroSlider() {
+const HeroSlider = memo(function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   }, []);
 
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     setCurrentSlide(index);
-  };
+  }, []);
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
+    const interval = setInterval(nextSlide, 4000);
     return () => clearInterval(interval);
   }, [nextSlide]);
 
@@ -66,4 +66,6 @@ export default function HeroSlider() {
       </div>
     </section>
   );
-}
+});
+
+export default HeroSlider;

@@ -43,12 +43,12 @@ export default function ProductPageLayout({
             Contact us for the best prices and doorstep delivery
           </p>
           <div className="cta-buttons">
-            <a href="tel:9493700577" className="btn btn-primary">
+            <a href="tel:9390370577" className="btn btn-primary">
               <Phone size={20} />
               Call Now
             </a>
             <a
-              href="https://wa.me/919493700577?text=Hello%20SMR%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+              href="https://wa.me/919390370577?text=Hello%20SMR%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"
