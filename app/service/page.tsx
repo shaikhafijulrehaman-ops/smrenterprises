@@ -31,6 +31,10 @@ const coverage = [
 const pestControlWorkImages = [
   '/images/banners/pestcontrol.jpg',
   '/images/banners/pestcontrol1.webp',
+  '/images/banners/pestcontrol2.jpeg',
+  '/images/banners/pestcontrol3.jpeg',
+  '/images/banners/pestcontrol4.jpeg',
+  '/images/banners/pestcontrol5.jpeg',
 ];
 
 export default function ServicePage() {

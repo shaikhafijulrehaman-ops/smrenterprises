@@ -9,6 +9,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .service-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .service-gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .service-gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .service-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .service-gallery-item img {
+        height: 150px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -105,6 +130,30 @@
   </section>
 
   <section class="section section-gray">
+    <div class="container">
+      <div class="section-title center scroll-fade">
+        <h2>Our Work Gallery</h2>
+        <span class="accent-line"></span>
+        <p>See our pest control treatments in action</p>
+      </div>
+      <div class="service-gallery scroll-fade">
+        <div class="service-gallery-item">
+          <img src="images/services1.jpeg" alt="Pest Control Service" loading="lazy">
+        </div>
+        <div class="service-gallery-item">
+          <img src="images/services2.jpeg" alt="Pest Control Treatment" loading="lazy">
+        </div>
+        <div class="service-gallery-item">
+          <img src="images/services3.jpeg" alt="Professional Pest Control" loading="lazy">
+        </div>
+        <div class="service-gallery-item">
+          <img src="images/services4.jpeg" alt="Pest Control Services" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container">
       <div class="section-title center scroll-fade">
         <h2>How It Works</h2>
