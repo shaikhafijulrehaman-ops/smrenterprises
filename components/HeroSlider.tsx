@@ -33,7 +33,7 @@ const HeroSlider = memo(function HeroSlider() {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 4000);
+    const interval = setInterval(nextSlide, 2500);
     return () => clearInterval(interval);
   }, [nextSlide]);
 
